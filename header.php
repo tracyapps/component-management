@@ -37,10 +37,7 @@
 		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 	</div>
 	<div class="main-navigation">
-		<div class="mobile-menu-toggle"><a href="#menu-main-navigation" id="toggle">Menu</a></div>
 		<?php start_top_nav(); ?>
 	</div>
-
-
 </header> <!-- / .site-header -->
 <div class="site-content">

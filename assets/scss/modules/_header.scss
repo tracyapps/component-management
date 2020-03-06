@@ -1,25 +1,48 @@
 .site-header {
 	background: $header-background-color;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 1rem 2rem;
+
+	h1 {
+		margin: 0;
+		font-size: 2.5rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		a {
+			color: rgba( $white, 0.3 );
+		}
+	}
 
 	.main-navigation {
-
+		flex: 1;
+		margin-left: 4rem;
+		display: flex;
+		justify-content: flex-end;
 		text-transform: uppercase;
-
-		.mobile-menu-toggle {
-			display: none;
-		}
+		font-size: 1.35rem;
+		font-weight: 600;
 
 		ul {
 			margin: 0;
 			padding: 0.6em 1em;
 			display: flex;
+			flex: 1;
+			justify-content: flex-end;
 			align-items: center;
 			transition: all $button-transition-speed ease-in-out;
 
 
 			li {
 				list-style-type: none;
-				flex: 1;
+				padding: 0 2rem;
+				margin: 0 1rem;
+
+				+ li {
+					border-left: 1px solid rgba( $light-green, 0.3 );
+					margin-left: 0;
+				}
 
 				a {
 					transition: all $button-transition-speed ease-in-out;
@@ -29,50 +52,13 @@
 
 
 		}
-		@include tablet-down {
 
-			.mobile-menu-toggle {
-				display: block;
-			}
+	}
+	a {
+		color: $inverse-link-color;
 
-			ul {
-				flex-direction: column;
-				height: 0;
-				margin: 0;
-				padding: 0;
-				position: relative;
-				z-index: 9999;
-				display: flex;
-				overflow: hidden;
-
-
-				li {
-					width: 100%;
-
-					a {
-						line-height: 3;
-					}
-
-				}
-
-				&.open {
-					width: 100%;
-					max-width: 100vw;
-					display: flex;
-					height: calc( 100vh - 6rem );
-
-					li {
-						flex: 1;
-					}
-				}
-			}
-
-		}
-		a {
-
-			&:hover {
-
-			}
+		&:hover {
+			color: $inverse-link-color-hover;
 		}
 	}
 
@@ -91,24 +77,4 @@
 
 	}
 
-}
-
-@include tablet-up {
-	.home {
-		.site-header {
-			.main-navigation {
-				ul {
-					background-color: rgba( $header-background-color, 0 );
-
-					a {
-
-					}
-				}
-			}
-
-			&.smaller {
-
-			}
-		}
-	}
 }

@@ -53,11 +53,19 @@ body {
 
 a {
 	color: $default-link-color;
+	text-decoration-color: rgba( $default-link-color, 0.2 );
+	text-decoration-thickness: .15em;
+	text-underline-offset: 1.5px;
+	//text-decoration-style: double;
+	text-decoration-skip-ink: auto;
+	transition: all 200ms ease-in-out;
 
 	&:hover,
 	&:focus,
 	&:active {
 		color: $default-link-color-hover;
+		text-decoration-color: $default-link-color-hover;
+		text-decoration-thickness: .95em;
 	}
 }
 

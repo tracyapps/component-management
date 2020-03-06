@@ -60,3 +60,6 @@ require_once(get_template_directory().'/assets/functions/editor-styles.php');
 
 // Shortcodes
 require_once(get_template_directory().'/assets/functions/shortcodes.php');
+
+// custom post type 404 error fix
+flush_rewrite_rules( false );

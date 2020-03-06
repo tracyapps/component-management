@@ -7,13 +7,12 @@
 			<main id="main" class="main" role="main">
 
 				<header>
-					<?php start_the_archive_title( '<h1 class="page-title">', '</h1>', 'smaller'); ?>
-					<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
+					<h1 class="page-title"><span class="smaller">Viewing all</span>Components</h1>
 				</header>
 
 				<?php if ( have_posts() ) :
 					while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part( 'parts/loop', 'archive-list' ); ?>
+						<?php get_template_part( 'parts/loop', 'archive-table' ); ?>
 				<?php endwhile; ?>
 					<?php start_page_navi(); ?>
 				<?php else : ?>

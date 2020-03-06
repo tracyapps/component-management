@@ -108,6 +108,44 @@ function start_get_the_archive_title( $span_class = '' ) {
 }
 
 /**
+ * Display custom taxonomy, with links
+ *
+ * @param string $taxonomy
+ * @return string
+ */
+function start_display_custom_taxonomy( $taxonomy = '' ){
+	global $post;
+	$the_taxonomy_terms = wp_get_post_terms( $post->ID, $taxonomy );
+	if( $the_taxonomy_terms ) {
+		$taxonomy_array = array();
+		foreach( $the_taxonomy_terms as $term ) {
+			$taxonomy_array[] = '<a href="' . esc_url( get_term_link( $term->slug, $taxonomy ) ) . '">' .  esc_html( $term->name ) . '</a>';
+		}
+		$output = join( ', ', $taxonomy_array );
+		return $output;
+	}
+}
+
+/**
+ * Display custom taxonomy, raw, space separated (for class names)
+ *
+ * @param string $taxonomy
+ * @return string
+ */
+function start_display_custom_taxonomy_raw( $taxonomy = '' ){
+	global $post;
+	$the_taxonomy_terms = wp_get_post_terms( $post->ID, $taxonomy );
+	if( $the_taxonomy_terms ) {
+		$taxonomy_array = array();
+		foreach( $the_taxonomy_terms as $term ) {
+			$taxonomy_array[] = esc_html( $term->slug );
+		}
+		$output = join( ' ', $taxonomy_array );
+		return $output;
+	}
+}
+
+/**
  * add excerpts to pages
  */
 function start_add_excerpts_to_pages() {

@@ -45,3 +45,36 @@ function start_group_photos_shortcode( $atts, $content = null ) {
 
 }
 add_shortcode( 'group-photos', 'start_group_photos_shortcode' );
+
+
+/**
+ * shortcode for repeater display, formidable pro
+ *
+ * @param $atts
+ * @return string
+ */
+
+function frm_repeat_post( $atts ) {
+	$content = '';
+	$field_ids = explode( ',', $atts['field_ids'] );
+	if ( ! isset( $_POST['item_meta'][ $atts['section_id'] ] ) ) {
+		return $content;
+	}
+
+	foreach ( (array) $_POST['item_meta'][ $atts['section_id'] ] as $row ) {
+		if ( $key === 'form' || $key === 'row_ids' ) {
+			continue;
+		}
+		foreach ( (array) $field_ids as $field_id ) {
+			if ( is_array( $row[ $field_id ] ) ) {
+				$content .= ' ' . sanitize_text_field( implode( ', ', $row[ $field_id ] ) ) . '
+';
+			} else {
+				$content .= $row[ $field_id ];
+			}
+		}
+		$content .= '<br/>';
+	}
+	return $content;
+}
+add_shortcode('frm-repeat-post', 'frm_repeat_post');

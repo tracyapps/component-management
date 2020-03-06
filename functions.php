@@ -30,9 +30,11 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 	// Import ACF fields
 	require_once( get_template_directory() . '/assets/functions/acf-import.php' );
 	// Extend ACF fields
-	require_once( get_template_directory() . '/assets/functions/acf-helper.php' );
+	// require_once( get_template_directory() . '/assets/functions/acf-helper.php' );
 	// Site options
-	require_once( get_template_directory() . '/assets/functions/site-options.php' );
+	 require_once( get_template_directory() . '/assets/functions/site-options.php' );
+	// ACF blocks (hopefully)
+	require_once( get_template_directory() . '/assets/functions/acf-blocks.php' );
 }
 
 // Related post function - no need to rely on plugins
@@ -48,7 +50,7 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 
 // Adds site styles to the WordPress editor
-// require_once(get_template_directory().'/assets/functions/editor-styles.php');
+require_once(get_template_directory().'/assets/functions/editor-styles.php');
 
 // Customize the WordPress login menu
 //require_once(get_template_directory().'/assets/functions/login.php');
@@ -58,3 +60,6 @@ require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 
 // Shortcodes
 require_once(get_template_directory().'/assets/functions/shortcodes.php');
+
+// custom post type 404 error fix
+flush_rewrite_rules( false );

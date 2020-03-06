@@ -1,0 +1,228 @@
+.component_table_row {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	border-top: 1px solid rgba( $white, 0.7 );
+	border-bottom: 1px solid rgba( $dark, 0.2 );
+	transition: all 250ms ease-in-out;
+
+	&:hover {
+		background: rgba( $white, 0.3 );
+	}
+
+	&:nth-child( 2n ) {
+		background: rgba( $white, 0.1 );
+		&:hover {
+			background: rgba( $white, 0.4 );
+		}
+	}
+
+	.priority {
+		width: 12rem;
+		height: 8rem;
+		background: $dark;
+		font-size: 80%;
+		padding: 4px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 8px 0 0 8px;
+		margin-right: 1rem;
+		margin-left: -6px;
+		@include inverse-colors;
+
+		a {
+			text-decoration: none;
+			font-weight: 600;
+			color: $white;
+			display: flex;
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			transition: all 250ms ease-in-out;
+
+			&:hover {
+				background: rgba( $dark, 0.1 );
+			}
+		}
+	}
+
+	&.priority-5-critical {
+		.priority {
+			background: $red;
+		}
+	}
+	&.priority-4-major {
+		.priority {
+			background: $orange;
+		}
+	}
+	&.priority-3-moderate {
+		.priority {
+			background: saturate( darken( $yellow, 7 ), 30 );
+			a {
+				color: lighten( $dark, 10 );
+			}
+		}
+	}
+	&.priority-2-minor {
+		.priority {
+			background: $light-green;
+			a {
+				color: lighten($dark, 10);
+			}
+		}
+	}
+	&.priority-1-cosmetic {
+		.priority {
+			background: $light-blue;
+			a {
+				color: lighten($dark, 10);
+			}
+		}
+	}
+
+	.status {
+		//width: 12rem;
+		height: auto;
+		background: $offwhite;
+		font-size: 60%;
+		padding: 5px 9px;
+		margin-left: 0;
+		margin-right: -6px;
+		border: 1px solid $dark;
+		align-self: center;
+		border-radius: 8px;
+
+		a {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+			justify-content: center;
+			align-items: center;
+			transition: all 250ms ease-in-out;
+			text-align: center;
+
+			&:hover {
+				background: rgba( $dark, 0.1 );
+			}
+		}
+	}
+
+	&.status-new {
+		.status {
+			border: 1px solid $pink;
+			border-left: 8px solid $pink;
+			padding-left: 6px;
+
+			a {
+				color: $pink;
+			}
+		}
+	}
+	&.status-complete {
+		.status {
+			border: 1px solid $green;
+			border-right: 8px solid $green;
+			padding-right: 6px;
+
+			a {
+				color: darken( $green, 10 );
+			}
+		}
+	}
+	&.status-in-progress {
+		.status {
+			border: 1px solid $purple;
+			border-top: 5px solid $purple;
+			padding-top: 2px;
+
+			a {
+				color: $purple;
+			}
+		}
+	}
+	&.status-in-review {
+		.status {
+			border: 1px solid $teal;
+			border-bottom: 5px solid $teal;
+			padding-botom: 2px;
+
+			a {
+				color: $teal;
+			}
+		}
+	}
+	&.status-needs-more-information {
+		.status {
+			border: 6px solid saturate( $gold, 10 );
+
+			a {
+				color: darken( saturate( $gold, 10 ), 20 );
+				//font-style: italic;
+				//font-weight: 600;
+			}
+		}
+	}
+	&.status-blocked {
+		.status {
+			background: $dark;
+			a {
+				color: $offwhite;
+				font-weight: 600;
+			}
+		}
+	}
+	&.status-rejected {
+		// opacity: 0.6;
+
+		.status {
+			background: darken( $red, 20 );
+			a {
+				color: $offwhite;
+				font-weight: 600;
+			}
+		}
+	}
+	&.status-on-hold {
+		.status {
+			background: darken( $offwhite, 10 );
+			a {
+				color: $dark;
+				font-style: italic;
+				font-weight: 600;
+			}
+		}
+	}
+	.component_detail_columns {
+		flex: 1;
+		padding: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		align-content: space-between;
+
+		> * {
+			width: 100%;
+		}
+
+		a {
+			flex: 1;
+			height: calc( 100% - 1.5rem );
+		}
+		.tags {
+			font-size: 60%;
+
+			margin-bottom: -0.5rem;
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+
+	> div {
+		margin: 1px 2px;
+	}
+}

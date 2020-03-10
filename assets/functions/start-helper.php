@@ -28,6 +28,21 @@ function start_the_archive_title( $before = '', $after = '', $span_class = '' ) 
 	}
 }
 
+/**
+ * display latest update
+ *
+ * @param $content
+ * @return string
+ */
+function start_display_last_updated( ) {
+	global $post;
+	$modified_time = get_the_modified_time('F jS, Y', $post->ID );
+
+	$output = '<p class="last-updated">Last updated on '. $modified_time .'</p>';
+
+	return $output;
+}
+
 
 /**
  * Retrieve the archive title based on the queried object.

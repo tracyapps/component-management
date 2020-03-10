@@ -31,7 +31,8 @@
 		margin-left: -6px;
 		@include inverse-colors;
 
-		a {
+		a,
+		a:visited {
 			text-decoration: none;
 			font-weight: 600;
 			color: $white;
@@ -61,7 +62,8 @@
 	&.priority-3-moderate {
 		.priority {
 			background: saturate( darken( $yellow, 7 ), 30 );
-			a {
+			a,
+			a:visited {
 				color: lighten( $dark, 10 );
 			}
 		}
@@ -69,7 +71,8 @@
 	&.priority-2-minor {
 		.priority {
 			background: $light-green;
-			a {
+			a,
+			a:visited {
 				color: lighten($dark, 10);
 			}
 		}
@@ -77,22 +80,33 @@
 	&.priority-1-cosmetic {
 		.priority {
 			background: $light-blue;
-			a {
+			a,
+			a:visited {
 				color: lighten($dark, 10);
 			}
 		}
 	}
 
+	.right-side-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: space-between;
+
+		p.last-updated {
+			font-size: 60%;
+			margin-bottom: 0.5rem;
+		}
+	}
 	.status {
 		//width: 12rem;
 		height: auto;
 		background: $offwhite;
 		font-size: 60%;
 		padding: 5px 9px;
-		margin-left: 0;
-		margin-right: -6px;
+		margin: 0.55rem -6px 0 0;
 		border: 1px solid $dark;
-		align-self: center;
+		align-self: flex-end;
 		border-radius: 8px;
 
 		a {
@@ -117,7 +131,8 @@
 			border-left: 8px solid $pink;
 			padding-left: 6px;
 
-			a {
+			a,
+			a:visited {
 				color: $pink;
 			}
 		}
@@ -128,7 +143,8 @@
 			border-right: 8px solid $green;
 			padding-right: 6px;
 
-			a {
+			a,
+			a:visited {
 				color: darken( $green, 10 );
 			}
 		}
@@ -139,7 +155,8 @@
 			border-top: 5px solid $purple;
 			padding-top: 2px;
 
-			a {
+			a,
+			a:visited {
 				color: $purple;
 			}
 		}
@@ -150,7 +167,8 @@
 			border-bottom: 5px solid $teal;
 			padding-botom: 2px;
 
-			a {
+			a,
+			a:visited {
 				color: $teal;
 			}
 		}
@@ -159,7 +177,8 @@
 		.status {
 			border: 6px solid saturate( $gold, 10 );
 
-			a {
+			a,
+			a:visited {
 				color: darken( saturate( $gold, 10 ), 20 );
 				//font-style: italic;
 				//font-weight: 600;
@@ -169,7 +188,8 @@
 	&.status-blocked {
 		.status {
 			background: $dark;
-			a {
+			a,
+			a:visited {
 				color: $offwhite;
 				font-weight: 600;
 			}
@@ -180,7 +200,8 @@
 
 		.status {
 			background: darken( $red, 20 );
-			a {
+			a,
+			a:visited {
 				color: $offwhite;
 				font-weight: 600;
 			}
@@ -189,7 +210,8 @@
 	&.status-on-hold {
 		.status {
 			background: darken( $offwhite, 10 );
-			a {
+			a,
+			a:visited {
 				color: $dark;
 				font-style: italic;
 				font-weight: 600;

@@ -20,11 +20,16 @@
 		<div class="tags"><?php the_tags(); ?></div>
 	</div>
 
-	<div class="status <?php echo start_display_custom_taxonomy_raw( 'status' ) ?>">
-		<?php
-		echo start_display_custom_taxonomy( 'status' );
-		?>
+	<div class="right-side-container">
+		<div class="status <?php echo start_display_custom_taxonomy_raw( 'status' ) ?>">
+			<?php
+			echo start_display_custom_taxonomy( 'status' );
+			?>
+
+		</div>
+		<?php echo start_display_last_updated(); ?>
 	</div>
+
 </article> <!-- end article -->
 
 	

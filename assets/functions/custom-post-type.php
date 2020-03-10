@@ -90,6 +90,7 @@ function start_custom_taxonomy_types() {
 			),
 			'show_admin_column' => true,
 			'show_ui' => true,
+			'show_in_rest' => true, // comment to remove gutenberg
 			'query_var' => true,
 			'rewrite' => array( 'slug' => 'status' ),
 		)
@@ -119,6 +120,7 @@ function start_custom_taxonomy_types() {
 			),
 			'show_admin_column' => true,
 			'show_ui' => true,
+			'show_in_rest' => true, // comment to remove gutenberg
 			'query_var' => true,
 			'rewrite' => array( 'slug' => 'priority' ),
 		)

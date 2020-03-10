@@ -1,6 +1,6 @@
 <?php if ( !is_user_logged_in() ) {
 	$login_page = get_site_url() . '/log-in';
-	header( "refresh:4;url=" . $login_page );
+	header( "refresh:4;url=" . esc_url( $login_page ) );
 	get_header();
 } else {
 	get_header();
@@ -10,8 +10,8 @@
 	<div id="inner-content" class="row">
 		<main id="main" class="full" role="main">
 		<?php if ( !is_user_logged_in() ) { ?>
-			<h1>Log in</h1>
-			<p>You must be logged in to submit a request. Redirecting you now</p>
+			<h1 class="page-title">Log in</h1>
+			<p>You must be logged in to submit a request. <a href="<?php echo esc_url( $login_page ) ?>">Redirecting you now</a></p>
 		<?php } else { ?>
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

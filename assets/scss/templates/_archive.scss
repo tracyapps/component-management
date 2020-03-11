@@ -187,7 +187,7 @@
 	}
 	&.status-blocked {
 		.status {
-			background: $dark;
+			background: darken( $red, 20 );
 			a,
 			a:visited {
 				color: $offwhite;
@@ -195,11 +195,22 @@
 			}
 		}
 	}
-	&.status-rejected {
-		// opacity: 0.6;
+	&.status-rejected,
+	&.status-duplicate {
+		opacity: 0.8;
+
+		.priority,
+		.tags,
+		.last-updated {
+			opacity: 0.5;
+		}
+
+		.component_name {
+			text-decoration: line-through;
+		}
 
 		.status {
-			background: darken( $red, 20 );
+			background: $dark;
 			a,
 			a:visited {
 				color: $offwhite;

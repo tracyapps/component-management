@@ -929,17 +929,28 @@ footer.site-footer {
     .component_table_row.status-needs-more-information .status a:visited {
       color: #a78c0f; }
   .component_table_row.status-blocked .status {
-    background: #414141; }
+    background: #8a172a; }
     .component_table_row.status-blocked .status a,
     .component_table_row.status-blocked .status a:visited {
       color: #F2F2F2;
       font-weight: 600; }
-  .component_table_row.status-rejected .status {
-    background: #8a172a; }
-    .component_table_row.status-rejected .status a,
-    .component_table_row.status-rejected .status a:visited {
-      color: #F2F2F2;
-      font-weight: 600; }
+  .component_table_row.status-rejected, .component_table_row.status-duplicate {
+    opacity: 0.8; }
+    .component_table_row.status-rejected .priority,
+    .component_table_row.status-rejected .tags,
+    .component_table_row.status-rejected .last-updated, .component_table_row.status-duplicate .priority,
+    .component_table_row.status-duplicate .tags,
+    .component_table_row.status-duplicate .last-updated {
+      opacity: 0.5; }
+    .component_table_row.status-rejected .component_name, .component_table_row.status-duplicate .component_name {
+      text-decoration: line-through; }
+    .component_table_row.status-rejected .status, .component_table_row.status-duplicate .status {
+      background: #414141; }
+      .component_table_row.status-rejected .status a,
+      .component_table_row.status-rejected .status a:visited, .component_table_row.status-duplicate .status a,
+      .component_table_row.status-duplicate .status a:visited {
+        color: #F2F2F2;
+        font-weight: 600; }
   .component_table_row.status-on-hold .status {
     background: #d9d9d9; }
     .component_table_row.status-on-hold .status a,

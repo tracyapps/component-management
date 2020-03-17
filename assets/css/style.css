@@ -734,50 +734,74 @@ footer.site-footer {
 /**
  * component detail page
  */
-.submission_overview {
-  width: 90%;
-  margin: 0 auto; }
-  .submission_overview .meta {
-    font-weight: 600; }
-  .submission_overview .reason {
-    font-size: 75%;
-    background-image: linear-gradient(15deg, #3f4351 0%, #35393f 100%);
-    color: #fff;
-    padding: 20px; }
-    .submission_overview .reason a,
-    .submission_overview .reason a:visited {
-      color: #bae400; }
-      .submission_overview .reason a:hover, .submission_overview .reason a:focus, .submission_overview .reason a:active,
-      .submission_overview .reason a:visited:hover,
-      .submission_overview .reason a:visited:focus,
-      .submission_overview .reason a:visited:active {
-        color: #F2F2F2; }
-      .submission_overview .reason a.button:hover,
-      .submission_overview .reason a:visited.button:hover {
-        color: #fff !important; }
-    .submission_overview .reason svg {
-      fill: #fff !important; }
-    .submission_overview .reason h4 {
-      margin: 0;
-      font-size: 1.4rem;
-      font-weight: 600; }
-
-.example_header {
-  text-align: center; }
-
-.single_component_example {
+.component_detail_page {
   display: grid;
-  width: 90%;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-  grid-gap: 20px;
-  border-bottom: 1px solid #00b5e4;
-  justify-items: stretch; }
-  .single_component_example .type {
-    grid-column: 1 / span 5;
-    -ms-flex-item-align: start;
-    align-self: start;
-    margin-top: 2rem; }
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "title title" "overview overview" "main timeline"; }
+  .component_detail_page header.article-header {
+    grid-area: title; }
+  .component_detail_page section.submission_overview {
+    grid-area: overview; }
+  .component_detail_page section.component_example_container {
+    grid-area: main; }
+  .component_detail_page aside.comments {
+    grid-area: timeline; }
+  .component_detail_page .article-header .meta {
+    width: 90%;
+    margin: 0 auto 2rem auto;
+    font-weight: 600; }
+    .component_detail_page .article-header .meta ul.post-categories {
+      display: inline;
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      .component_detail_page .article-header .meta ul.post-categories li {
+        display: inline-block; }
+        .component_detail_page .article-header .meta ul.post-categories li + li {
+          padding-left: 10px; }
+    .component_detail_page .article-header .meta span.group {
+      display: inline-block;
+      white-space: nowrap;
+      margin-left: 1rem;
+      padding-left: 1rem; }
+      .component_detail_page .article-header .meta span.group + span.group {
+        border-left: 1px dashed #0ea6a3; }
+  .component_detail_page .submission_overview {
+    margin: 2rem 0;
+    padding: 2rem;
+    border-bottom: 1px dotted rgba(65, 65, 65, 0.5);
+    border-top: 1px dotted rgba(65, 65, 65, 0.5); }
+    .component_detail_page .submission_overview h2 {
+      margin-top: 0; }
+    .component_detail_page .submission_overview .reason {
+      font-size: 75%;
+      background: #f0db2d;
+      box-shadow: 1px 1px 2px rgba(65, 65, 65, 0.3);
+      padding: 20px;
+      width: 300px;
+      float: right; }
+      .component_detail_page .submission_overview .reason h4 {
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: 600; }
+  .component_detail_page .single_component_example {
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-gap: 20px;
+    border-bottom: 1px solid #00b5e4;
+    justify-items: stretch; }
+    .component_detail_page .single_component_example .type {
+      grid-column: 1 / span 5;
+      -ms-flex-item-align: start;
+      align-self: start;
+      margin-top: 2rem; }
+  .component_detail_page .comments {
+    border-left: 1px dotted rgba(65, 65, 65, 0.5);
+    padding: 2rem; }
+    .component_detail_page .comments h3 {
+      margin-top: 0; }
 
 .component_table_row {
   display: -ms-flexbox;
@@ -1067,6 +1091,10 @@ span.pulled-left {
     span.pulled-left {
       width: 200px;
       font-size: 1.3em; } }
+
+aside.comments {
+  margin: 2rem 0;
+  min-height: 3rem; }
 
 .icon-email-dims {
   width: 100px;

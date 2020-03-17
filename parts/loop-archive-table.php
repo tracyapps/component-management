@@ -30,10 +30,6 @@
 		<?php echo start_display_last_updated(); ?>
 	</div>
 
-	<aside class="comments">
-		<?php comments_template(); ?>
-	</aside>
-
 </article> <!-- end article -->
 
 	

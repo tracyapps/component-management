@@ -33,40 +33,118 @@
 /**
  * component detail page
  */
-.submission_overview {
-	width: 90%;
-	margin: 0 auto;
 
-	.meta {
-		font-weight: 600;
+// the article surrounding the component single / detail page
+// css grid settings
+.component_detail_page {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-areas:
+		"title title"
+		"overview overview"
+		"main timeline";
+
+	header.article-header {
+		grid-area: title;
 	}
-	.reason {
-		font-size: 75%;
-		@include slate-gradient;
-		@include inverse-colors;
-		padding: 20px;
-		h4 {
-			margin: 0;
-			font-size: 1.4rem;
+	section.submission_overview {
+		grid-area: overview;
+	}
+	section.component_example_container {
+		grid-area: main;
+	}
+	aside.comments {
+		grid-area: timeline;
+	}
+
+	.article-header {
+		.meta {
+			width: 90%;
+			margin: 0 auto 2rem auto;
 			font-weight: 600;
+
+			ul.post-categories {
+				display: inline;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				li {
+					display: inline-block;
+
+					+ li {
+						padding-left: 10px;
+					}
+
+				}
+			}
+
+			span.group {
+				display: inline-block;
+				white-space: nowrap;
+				margin-left: 1rem;
+				padding-left: 1rem;
+
+				+ span.group {
+					border-left: 1px dashed $teal;
+				}
+			}
+		}
+	}
+	.submission_overview {
+		margin: 2rem 0;
+		padding: 2rem;
+		border-bottom: 1px dotted rgba( $dark, 0.5 );
+		border-top: 1px dotted rgba( $dark, 0.5 );
+
+		h2 {
+			margin-top: 0;
+		}
+
+		.reason {
+			font-size: 75%;
+			background: $yellow;
+			box-shadow: 1px 1px 2px rgba( $dark, 0.3 );
+			padding: 20px;
+			width: 300px;
+			float: right;
+
+			h4 {
+				margin: 0;
+				font-size: 1.4rem;
+				font-weight: 600;
+			}
+		}
+	}
+	.example_header {
+		//text-align: center;
+	}
+
+	// for the looping / repeater of examples
+	.single_component_example {
+		display: grid;
+		width: 90%;
+		margin: 0 auto;
+		grid-template-columns: repeat( auto-fit, minmax( 30ch, 1fr ));
+		grid-gap: 20px;
+		border-bottom: 1px solid $primary-color;
+		justify-items: stretch;
+
+		.type {
+			grid-column: 1 / span 5;
+			align-self: start;
+			margin-top: 2rem;
+		}
+	}
+
+	.comments {
+		border-left: 1px dotted rgba( $dark, 0.5 );
+		padding: 2rem;
+
+		h3 {
+			margin-top: 0;
 		}
 	}
 }
-.example_header {
-	text-align: center;
-}
-.single_component_example {
-	display: grid;
-	width: 90%;
-	margin: 0 auto;
-	grid-template-columns: repeat( auto-fit, minmax( 30ch, 1fr ));
-	grid-gap: 20px;
-	border-bottom: 1px solid $primary-color;
-	justify-items: stretch;
 
-	.type {
-		grid-column: 1 / span 5;
-		align-self: start;
-		margin-top: 2rem;
-	}
-}
+

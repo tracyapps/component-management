@@ -33,7 +33,7 @@ function start_custom_post_types() {
 		'label'               => __( 'component', 'start' ),
 		'description'         => __( 'Component', 'start' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'comments' ),
+		'supports'            => array( 'title', 'editor', 'author', 'comments' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,

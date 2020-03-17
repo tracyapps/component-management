@@ -38,7 +38,7 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 }
 
 // Formidable advanced behavior
-// require_once(get_template_directory().'/assets/functions/formidable-helper.php');
+require_once(get_template_directory().'/assets/functions/formidable-helper.php');
 
 // Related post function - no need to rely on plugins
 // require_once(get_template_directory().'/assets/functions/related-posts.php');

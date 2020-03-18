@@ -739,7 +739,7 @@ blockquote.wp-block-quote.is-style-large.big-title-box {
   border-radius: 10px;
   padding: 1rem 7rem;
   margin: 5rem auto;
-  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
   color: #fff; }
   blockquote.wp-block-quote.big-title-box:before,
   blockquote.wp-block-quote.is-style-large.big-title-box:before {

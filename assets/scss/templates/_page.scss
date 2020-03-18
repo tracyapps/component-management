@@ -32,7 +32,7 @@
 
 blockquote.wp-block-quote,
 blockquote.wp-block-quote.is-style-large {
-	
+
 	&.big-title-box {
 		width: 50%;
 		min-width: 400px;
@@ -40,7 +40,7 @@ blockquote.wp-block-quote.is-style-large {
 		border-radius: 10px;
 		padding: 1rem 7rem;
 		margin: 5rem auto;
-		@include dark-blue-gradient;
+		@include orange-gradient;
 		color: $white;
 
 		&:before {

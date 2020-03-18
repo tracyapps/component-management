@@ -30,6 +30,31 @@
 	text-align: center;
 }
 
+blockquote.wp-block-quote,
+blockquote.wp-block-quote.is-style-large {
+	
+	&.big-title-box {
+		width: 50%;
+		min-width: 400px;
+		font-size: 200%;
+		border-radius: 10px;
+		padding: 1rem 7rem;
+		margin: 5rem auto;
+		@include dark-blue-gradient;
+		color: $white;
+
+		&:before {
+			left: 1.5rem;
+			top: 0.5rem;
+		}
+
+		cite {
+			display: block;
+			margin-bottom: 2rem;
+		}
+	}
+}
+
 /**
  * component detail page
  */

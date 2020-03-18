@@ -731,6 +731,25 @@ footer.site-footer {
 .centered-title {
   text-align: center; }
 
+blockquote.wp-block-quote.big-title-box,
+blockquote.wp-block-quote.is-style-large.big-title-box {
+  width: 50%;
+  min-width: 400px;
+  font-size: 200%;
+  border-radius: 10px;
+  padding: 1rem 7rem;
+  margin: 5rem auto;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  color: #fff; }
+  blockquote.wp-block-quote.big-title-box:before,
+  blockquote.wp-block-quote.is-style-large.big-title-box:before {
+    left: 1.5rem;
+    top: 0.5rem; }
+  blockquote.wp-block-quote.big-title-box cite,
+  blockquote.wp-block-quote.is-style-large.big-title-box cite {
+    display: block;
+    margin-bottom: 2rem; }
+
 /**
  * component detail page
  */

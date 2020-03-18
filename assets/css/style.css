@@ -418,6 +418,14 @@ input[type="submit"] {
       outline: none;
       background: rgba(0, 181, 228, 0.1); }
 
+.tracys-to-do-list {
+  line-height: 2; }
+  .tracys-to-do-list .frm_style_formidable-style.with_frm_style .frm_primary_label {
+    font-size: 3rem; }
+  .tracys-to-do-list .frm_style_formidable-style.with_frm_style .frm_radio label,
+  .tracys-to-do-list .frm_style_formidable-style.with_frm_style .frm_checkbox label {
+    font-size: 2rem; }
+
 .widget_search form.search-form {
   display: -ms-flexbox;
   display: flex; }
